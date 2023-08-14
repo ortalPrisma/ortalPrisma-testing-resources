@@ -370,8 +370,6 @@ Resources:
           Value: "2021-08-23 13:51:41"
         - Key: git_last_modified_by
           Value: nimrodkor@gmail.com
-      PublicAccessBlockConfiguration:
-        RestrictPublicBuckets: True
 
   #############
   ###  IAM  ###
@@ -998,6 +996,8 @@ Resources:
           Value: jonathan.jozwiak@googlemail.com
         - Key: yor_trace
           Value: 9e00e7c2-b27c-4141-af5a-2d90c9632a23
+      PublicAccessBlockConfiguration:
+        RestrictPublicBuckets: True
   DataScienceBucket:
     # not encrypted
     Type: AWS::S3::Bucket
