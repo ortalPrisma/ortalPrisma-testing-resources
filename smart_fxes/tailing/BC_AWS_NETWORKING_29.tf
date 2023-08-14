@@ -7,7 +7,6 @@ resource "aws_lb_listener" "no_protocol" {
 
 resource "aws_lb_listener" "http" {
   load_balancer_arn = ""
-  protocol = "HTTP"
   default_action {
     type = ""
   }
