@@ -5,13 +5,16 @@ resource "aws_lambda_function" "skip" {
   handler       = "exports.test"
 
   source_code_hash = filebase64sha256("lambda_function_payload.zip")
-  runtime = "nodejs12.x"
+  runtime          = "nodejs12.x"
 
   environment {
     variables = {
       access_key = "AKIAIOSFODNN7EXAMPLE" #checkov:skip=CKV_SECRET_2:example
       secret_key = ""
     }
+  }
+  tags = {
+    git_org = "ortalPrisma"
   }
 }
 
@@ -22,12 +25,15 @@ resource "aws_lambda_function" "wrong_skip" {
   handler       = "exports.test"
 
   source_code_hash = filebase64sha256("lambda_function_payload.zip")
-  runtime = "nodejs12.x"
+  runtime          = "nodejs12.x"
 
   environment {
     variables = {
       access_key = "AKIAIOS3F6KN7EXAMPLE" #checkov:skip=CKV_SECRET_5:wrong check id
       secret_key = ""
     }
+  }
+  tags = {
+    git_org = "ortalPrisma"
   }
 }
