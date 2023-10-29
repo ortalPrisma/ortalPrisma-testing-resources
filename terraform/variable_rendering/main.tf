@@ -6,4 +6,7 @@ resource "aws_lb" "enabled" {
   subnets            = var.public_subnet_ids
 
   drop_invalid_header_fields = var.drop_invalid_header_fields
+  tags = {
+    git_org = "ortalPrisma"
+  }
 }
